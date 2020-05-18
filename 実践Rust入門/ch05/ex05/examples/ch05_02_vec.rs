@@ -1,6 +1,6 @@
 fn main() {
     let v1 = vec![false, true, false];
-    let v2 = vec![0.0, -1,0, 1.0, 0.5];
+    let v2 = vec![0.0, -1.0, 1.0, 0.5];
 
     assert_eq!(v2.len(), 4);
 
@@ -27,7 +27,7 @@ fn main() {
     assert_eq!(v7, []);
 
     let a8 = ['i', 'j'];
-    v6.extend_from_slice(&a8)
+    v6.extend_from_slice(&a8);
     assert_eq!(v6, ['a', 'f', 'c', 'd', 'g', 'h', 'i', 'j']);
     assert_eq!(a8, ['i', 'j']);
 }
