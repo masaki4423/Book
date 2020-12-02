@@ -10,6 +10,16 @@ impl Person {
         println!("{}: {} ({}) in {}",
             self.id, self.name, self.age, self.addr);
     }
+
+    fn print_t(&self, private: bool) {
+        if private == true {
+            println!("{}: {}",
+            self.id, self.name);
+        } else {
+            println!("{}: {} ({}) in {}",
+            self.id, self.name, self.age, self.addr);
+        }
+    }
 }
 
 fn main() {
@@ -20,4 +30,7 @@ fn main() {
         addr: String::from("Tokyo"),
     };
     pa.print();
+
+    pa.print_t(true);
+    pa.print_t(false);
 }
