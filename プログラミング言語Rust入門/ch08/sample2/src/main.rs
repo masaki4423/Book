@@ -20,6 +20,12 @@ impl Person {
             self.id, self.name, self.age, self.addr);
         }
     }
+
+    fn to_str(&self) -> String {
+        let s = format!("{}: {} ({}) in {}",
+            self.id, self.name, self.age, self.addr);
+        s
+    }
 }
 
 fn main() {
@@ -33,4 +39,7 @@ fn main() {
 
     pa.print_t(true);
     pa.print_t(false);
+
+    let s = pa.to_str();
+    println!("s is {}", s);
 }
