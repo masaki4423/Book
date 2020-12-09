@@ -1,5 +1,5 @@
 use std::num::ParseIntError;
-type Result<T> = std::result::Result<T, ParseIntError>;
+// type Result<T> = std::result::Result<T, ParseIntError>;
 
 fn main() {
     let r = "100".parse::<i32>();
@@ -40,6 +40,10 @@ fn main() {
         Ok(n) => println!("Ok: {}", n),
         Err(err) => println!("Error: {:?}", err),
     }
+    match half_number("xxx") {
+        Ok(n) => println!("Ok: {}", n),
+        Err(err) => println!("Error: {:?}", err),
+    }
 }
 
 // fn half_number(s: &str) -> Result<i32, ParseIntError> {
@@ -49,9 +53,13 @@ fn main() {
     // }
 // }
 
-fn half_number(s: &str) -> Result<i32> {
-    match s.parse::<i32>() {
-        Ok(n) => Ok(n / 2),
-        Err(err) => Err(err),
-    }
+// fn half_number(s: &str) -> Result<i32> {
+    // match s.parse::<i32>() {
+        // Ok(n) => Ok(n / 2),
+        // Err(err) => Err(err),
+    // }
+// }
+
+fn half_number(s: &str) -> Result<i32, ParseIntError> {
+    s.parse::<i32>().map(|n| n / 2)
 }
