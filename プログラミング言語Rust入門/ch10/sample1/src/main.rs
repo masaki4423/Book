@@ -12,6 +12,10 @@ fn move_a(a: Person) {
     println!("move_a: a is {:?}", a);
 }
 
+fn add_age(a: &mut Person) {
+    a.age += 1;
+}
+
 fn main() {
     let a = Person {name: "masuda", age: 50};
     print_a(&a);
@@ -25,4 +29,9 @@ fn main() {
     let x = a;
     // println!("a is {:?}", a);
     println!("x is {:?}", x);
+
+    let mut a = Person {name: "masuda", age: 50};
+    println!("a is {:?}", a);
+    add_age(&mut a);
+    println!("a is {:?}", a);
 }
