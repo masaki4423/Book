@@ -51,4 +51,12 @@ fn main() {
     println!("x is {:?}", x);
     add_age(&mut x);
     println!("x is {:?}", x);
+
+    let mut a = Person {name: "masuda", age: 50};
+    let mut x = a;
+    println!("x is {:?}", x);
+    x.age += 1;
+    println!("x is {:?}", x);
+    add_age(&mut x);
+    println!("x is {:?}", x);
 }
