@@ -73,4 +73,22 @@ fn main() {
     println!("x is {:?}", x);
     let y = a;
     println!("y is {:?}", y);
+
+    let a = vec!["one", "two", "three"];
+    println!("a[] is {:?}", a);
+    // let x = a;
+    let x = &a;
+    println!("x[] is {:?}", x);
+    // let y = a;
+    let y = &a;
+    println!("y[] is {:?}", y);
+
+    let a = String::from("masuda");
+    println!("a is {}", a);
+    // let x = a;
+    let x = &a;
+    println!("x is {}", x);
+    // let y = a;
+    let y = &a;
+    println!("y is {}", y);
 }
