@@ -4,7 +4,7 @@ use std::fs::*;
 use std::fs::File;
 use std::io::Read;
 use std::io::{BufRead, BufReader};
-fn main() {
+fn main() -> std::io::Result<()>{
     let path = "sample.txt";
     println!("read all lines.");
     if let Ok(data) = std::fs::read_to_string(path) {
@@ -74,4 +74,11 @@ fn main() {
             println!("line is {}", l);
         }
     }
+
+    let path = "sample.txt";
+    let file = File::open(path)?;
+    for line in BufReader::new(file).lines() {
+        println!("line is {}", line?);
+    }
+    Ok(())
 }
