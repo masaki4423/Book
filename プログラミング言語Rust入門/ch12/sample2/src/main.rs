@@ -7,4 +7,10 @@ fn main() {
         .expect("file not found.");
     writeln!(file, "hello rust world")
         .expect("cannot write.");
+
+    let path = "sample.txt";
+    let mut file = File::create(path)
+        .expect("file not found.");
+    file.write(b"hello rust world.\n")
+        .expect("cannot write.");
 }
