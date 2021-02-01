@@ -13,4 +13,11 @@ fn main() {
         .expect("file not found.");
     file.write(b"hello rust world.\n")
         .expect("cannot write.");
+
+    let path = "sample.txt";
+    let mut file = File::create(path)
+        .expect("file not found.");
+    let s = "hello rust world.\n";
+    file.write(s.as_bytes())
+        .expect("cannot write.");
 }
