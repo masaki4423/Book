@@ -20,4 +20,13 @@ fn main() {
     let s = "hello rust world.\n";
     file.write(s.as_bytes())
         .expect("cannot write.");
+
+    let path = "sample.txt";
+    let mut file = File::create(path)
+        .expect("file not found.");
+    let s = "hello rust world.\n";
+    for it in s.as_bytes() {
+        file.write(&[*it])
+            .expect("cannot write.");
+    }
 }
