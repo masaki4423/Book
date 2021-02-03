@@ -26,6 +26,10 @@ fn main() {
         .expect("file not found.");
     let s = "hello rust world.\n";
     for it in s.as_bytes() {
+        // let ch = *it;
+        // let ary = [ch];
+        // file.write(&ary)
+        //     .expect("cannot write");
         file.write(&[*it])
             .expect("cannot write.");
     }
