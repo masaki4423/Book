@@ -1,7 +1,7 @@
 use std::fs::File;
 use std::io::Write;
 
-fn main() {
+fn main() -> std::io::Result<()>{
     let path = "sample.txt";
     let mut file = File::create(path)
         .expect("file not found.");
@@ -33,4 +33,9 @@ fn main() {
         file.write(&[*it])
             .expect("cannot write.");
     }
+
+    let path = "sample.txt";
+    let mut file = File::create(path)?;
+    file.write(b"hello rust world.\n")?;
+    Ok(())
 }
