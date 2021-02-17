@@ -14,4 +14,7 @@ fn main() {
 
     let n = Option::<i32>::Some(10);
     println!("option is {}.", n.unwrap());
+
+    println!("a is {}, b is {}", 100, "test");
+    println!("a is {a}, b is {b}", a=100, b="test");
 }
