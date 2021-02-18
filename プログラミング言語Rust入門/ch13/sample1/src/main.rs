@@ -17,4 +17,11 @@ fn main() {
 
     println!("a is {}, b is {}", 100, "test");
     println!("a is {a}, b is {b}", a=100, b="test");
+
+    let n = 10;
+    println!("10進数 {}", n);
+    println!("16進数 {:x}", n);
+    println!("16進数 {:X}", n);
+    println!(" 8進数 {:o}", n);
+    println!(" 2進数 {:b}", n);
 }
