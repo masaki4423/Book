@@ -42,4 +42,13 @@ fn main() {
     println!("{:e} ", f);
     println!("{:E} ", f);
     println!("{:.2}", f);
+
+    println!("hello, `{:8}` world.", "rust");
+    println!("hello, `{:<8}` world.", "rust");
+    println!("hello, `{:>8}` world.", "rust");
+    println!("hello, `{:^8}` world.", "rust");
+    println!("hello, `{:8}` world.", 123);
+    println!("hello, `{:<8}` world.", 123);
+    println!("hello, `{:>8}` world.", 123);
+    println!("hello, `{:^8}` world.", 123);
 }
